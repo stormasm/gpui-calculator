@@ -24,12 +24,13 @@ fn main() {
         }]);
         let bounds = Bounds::centered(None, size(px(300.0), px(300.0)), cx);
 
-        let _ = cx.open_window(
+        cx.open_window(
             WindowOptions {
                 window_bounds: Some(WindowBounds::Windowed(bounds)),
                 ..Default::default()
             },
             |cx| cx.new_view(|cx| Root::new(cx)),
-        );
+        )
+        .unwrap();
     });
 }
